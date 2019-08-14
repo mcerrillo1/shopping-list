@@ -7,7 +7,7 @@
 
 //function to toggle check box
 function toggleCheckbox (){
-    $(".shopping-item-toggle").click(function(event){
+    $("ul").on('click', ".shopping-item-toggle" ,function(event){
         let shoppingTitle= $(this).closest("li").find (".shopping-item")
        shoppingTitle.toggleClass("shopping-item__checked");
        console.log (shoppingTitle)
@@ -24,7 +24,7 @@ $(function(){
 //function to remove item
 
 function removeShoppingItem (){
-    $(".shopping-item-delete").on('click',function(event){
+    $("ul").on('click', ".shopping-item-delete", function(event){
            let shoppingDelete= $(this).closest("li").remove();
            console.log (shoppingDelete)
     })
@@ -48,8 +48,7 @@ function addNewShoppingItem (){
          </button>
        </div>
      </li>`)
-     toggleCheckbox()
-     removeShoppingItem()
+  
     })
 
 }
